@@ -17,7 +17,7 @@ samples, guidance on mobile development, and a full API reference.
 
 
 How to use git
-git add .
-git commit -m "update"
-git push origin master
+- git add .
+- git commit -m "update"
+- git push origin master
 
