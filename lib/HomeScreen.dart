@@ -177,6 +177,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
+                SizedBox(height: 32.0,),
                 ///for community text
                 ClipRRect(
                   borderRadius: BorderRadius.circular(40.0),
@@ -184,7 +185,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Container(
                     height: 400.0,
                     width:  double.infinity,
-                    color: Colors.grey,
+                    color: Colors.grey[200],
+                    ///list 항목으로 제목 띄우는 것을 목표로 만들 것...
                     child: Center(
                       child: Text("community", style: TextStyle(fontSize: 16.0),)
                     )
