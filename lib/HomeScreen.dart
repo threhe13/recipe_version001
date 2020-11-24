@@ -177,6 +177,19 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
+                ///for community text
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(40.0),
+                  ///for debugging community box
+                  child: Container(
+                    height: 400.0,
+                    width:  double.infinity,
+                    color: Colors.grey,
+                    child: Center(
+                      child: Text("community", style: TextStyle(fontSize: 16.0),)
+                    )
+                  ),
+                )
               ],
             ),
           ),
