@@ -156,9 +156,27 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 SizedBox(height: 32,),
 
+
                 ///For community
-
-
+                Container(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Expanded(
+                        child: Text(
+                          "커뮤니티",
+                          style: GoogleFonts.playfairDisplay(
+                            fontSize: 30.0,
+                          ),
+                        ),
+                      ),
+                      ///For spacing
+                      SizedBox(
+                        width: 40,
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),

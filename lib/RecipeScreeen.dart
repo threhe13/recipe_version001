@@ -46,14 +46,14 @@ class RecipeScreen extends StatelessWidget {
                           Row(
                             children: [
                               Text(
-                                "닭강정 만들기",
+                                "레시피 설명",
                                 style: GoogleFonts.roboto(
                                   fontSize: 20, fontWeight: FontWeight.bold,
                                 ),
                                 textAlign: TextAlign.center,
                               ),
                               Spacer(),
-                              IconButton(icon: null, onPressed: null),
+                              IconButton(icon: Icon(Icons.star_border), onPressed: null),
                             ],
                           )
                         ],

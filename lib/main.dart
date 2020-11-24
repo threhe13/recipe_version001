@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_version001/HomeScreen.dart';
+import 'package:recipe_version001/Profile.dart';
+import 'package:recipe_version001/page2.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,7 +33,8 @@ class _RecipeAPPMenu extends State<RecipeAPPMenu> {
 
   var pages = [
     HomeScreen(),
-
+    Page2(),
+    Profile(),
   ];
 
   @override
