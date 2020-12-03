@@ -3,6 +3,8 @@ import 'package:recipe_version001/HomeScreen.dart';
 import 'package:recipe_version001/Profile.dart';
 import 'package:recipe_version001/page2.dart';
 
+import 'Community.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -34,7 +36,7 @@ class _RecipeAPPMenu extends State<RecipeAPPMenu> {
   var pages = [
     HomeScreen(),
     Page2(),
-    levelRecipe(),
+    Community(),
     Profile(),
     Setting(),
   ];
@@ -66,17 +68,6 @@ class _RecipeAPPMenu extends State<RecipeAPPMenu> {
   }
 
 }
-
-class levelRecipe extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Center(
-      child: Text("커뮤니티", style: TextStyle(fontSize: 40.0),),
-    );
-  }
-}
-
 class Setting extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
