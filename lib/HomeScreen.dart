@@ -71,6 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           "오늘의 추천요리",
                           style: GoogleFonts.playfairDisplay(
                             fontSize: 30.0,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
@@ -167,6 +168,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           "커뮤니티",
                           style: GoogleFonts.playfairDisplay(
                             fontSize: 30.0,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),

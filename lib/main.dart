@@ -34,7 +34,9 @@ class _RecipeAPPMenu extends State<RecipeAPPMenu> {
   var pages = [
     HomeScreen(),
     Page2(),
+    levelRecipe(),
     Profile(),
+    Setting(),
   ];
 
   @override
@@ -45,8 +47,8 @@ class _RecipeAPPMenu extends State<RecipeAPPMenu> {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("홈"),),
-          BottomNavigationBarItem(icon: Icon(Icons.fastfood), title: Text("레시피 검색"),),
-          BottomNavigationBarItem(icon: Icon(Icons.check_box), title: Text("수준별 레시피"),),
+          BottomNavigationBarItem(icon: Icon(Icons.fastfood), title: Text("레시피"),),
+          BottomNavigationBarItem(icon: Icon(Icons.comment_outlined), title: Text("커뮤니티"),),
           BottomNavigationBarItem(icon: Icon(Icons.face), title: Text("프로필"),),
           BottomNavigationBarItem(icon: Icon(Icons.settings), title: Text("설정"),),
         ],
@@ -65,3 +67,23 @@ class _RecipeAPPMenu extends State<RecipeAPPMenu> {
 
 }
 
+class levelRecipe extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Center(
+      child: Text("커뮤니티", style: TextStyle(fontSize: 40.0),),
+    );
+  }
+}
+
+class Setting extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Center(
+        child: Text("설정화면", style: TextStyle(fontSize: 40.0),),
+      ),
+    );
+  }
+}
