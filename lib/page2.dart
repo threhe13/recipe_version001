@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'RecipeScreeen.dart';
+
 class Page2 extends StatefulWidget {
   @override
   _Page2State createState() => _Page2State();
@@ -102,7 +104,7 @@ class _Page2State extends State<Page2> {
                     padding: const EdgeInsets.all(16.0),
                     itemCount: Recipes.length,
                     itemBuilder: (context, index){
-                      return _buildRecipeItem(index);
+                      return _buildRecipeItem(context, index);
                     },
                     separatorBuilder: (context, index) => const SizedBox(height: 16.0,),
                 ),
@@ -127,77 +129,84 @@ class _Page2State extends State<Page2> {
   }
 }
 
-Widget _buildRecipeItem(int index){
+Widget _buildRecipeItem(BuildContext context, int index){
   Map recipe = Recipes[index];
   int like = recipe['like'];
   final String sample = "assets/photos/image1.jpg";
-  return Stack(
-    children: <Widget>[
-      Container(
-        color: Colors.white,
-        padding: const EdgeInsets.all(16.0),
-        //margin: const EdgeInsets.all(16.0),
-        child: Row(
-          children: <Widget>[
-            Container(
-              color: Colors.blue,
-              width: 80.0,
-              child: Image.asset(
-                sample,
-                width: 80,
-                fit: BoxFit.cover,
-              ),
-              margin: const EdgeInsets.all(16.0),
-            ),
-            Expanded(
-                child: Column(
-                  children: <Widget>[
-                    Text(
-                      recipe["title"],
-                      style: TextStyle(fontSize: 16.0),
-                      textAlign: TextAlign.justify,
-                    ),
-                    Text.rich(TextSpan(
-                      style: TextStyle(
-                        height: 2.0,
-                      ),
-                      children: [
-                        WidgetSpan(
-                          ///profile image
-                          child: CircleAvatar(
-                            radius: 15.0,
-                          ),
+  return GestureDetector(
+            onTap: (){
+                Navigator.push(context, MaterialPageRoute(
+                builder: (context) => RecipeScreen(sample)
+                ));
+            },
+      child:  Column(
+        children: <Widget>[
+          Container(
+            color: Colors.white,
+            padding: const EdgeInsets.all(16.0),
+            //margin: const EdgeInsets.all(16.0),
+            child: Row(
+              children: <Widget>[
+                Container(
+                  color: Colors.blue,
+                  width: 80.0,
+                  child: Image.asset(
+                    sample,
+                    width: 80,
+                    fit: BoxFit.cover,
+                  ),
+                  margin: const EdgeInsets.all(16.0),
+                ),
+                Expanded(
+                    child: Column(
+                      children: <Widget>[
+                        Text(
+                          recipe["title"],
+                          style: TextStyle(fontSize: 16.0),
+                          textAlign: TextAlign.justify,
                         ),
-                        WidgetSpan(
-                          child: const SizedBox(width: 10.0,),
-                        ),
-                        TextSpan(
-                          text: recipe["author"],
+                        Text.rich(TextSpan(
                           style: TextStyle(
-                            fontSize: 16.0,
+                            height: 2.0,
                           ),
+                          children: [
+                            WidgetSpan(
+                              ///profile image
+                              child: CircleAvatar(
+                                radius: 15.0,
+                              ),
+                            ),
+                            WidgetSpan(
+                              child: const SizedBox(width: 10.0,),
+                            ),
+                            TextSpan(
+                              text: recipe["author"],
+                              style: TextStyle(
+                                fontSize: 16.0,
+                              ),
+                            ),
+                            WidgetSpan(
+                              child: const SizedBox(width: 10.0,),
+                            ),
+                            WidgetSpan(
+                              child: Icon(Icons.star_border, size: 14.0,),
+                            ),
+                            WidgetSpan(
+                              child: const SizedBox(width: 5.0,),
+                            ),
+                            TextSpan(
+                              text: 'Like $like',
+                            ),
+                          ],
                         ),
-                        WidgetSpan(
-                          child: const SizedBox(width: 10.0,),
-                        ),
-                        WidgetSpan(
-                          child: Icon(Icons.star_border, size: 14.0,),
-                        ),
-                        WidgetSpan(
-                          child: const SizedBox(width: 5.0,),
-                        ),
-                        TextSpan(
-                          text: 'Like $like',
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ],
-        )
-      )
-    ]
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            )
+          )
+        ]
+      ),
   );
 }
