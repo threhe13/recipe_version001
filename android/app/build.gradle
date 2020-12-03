@@ -41,8 +41,13 @@ android {
         applicationId "com.example.recipe_version001"
         minSdkVersion 16
         targetSdkVersion 29
+        multiDexEnabled true
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+    }
+
+    dependencies{
+        implementation 'com.android.support:multidex:1.0.3'
     }
 
     buildTypes {
