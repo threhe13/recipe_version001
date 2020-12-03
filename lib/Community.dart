@@ -46,7 +46,6 @@ class _CommunityState extends State<Community> {
                         margin: EdgeInsets.only(bottom: 10.0),
                         child: Material(
                           borderRadius: BorderRadius.circular(5.0),
-                          elevation: 3.0,
                           child: Container(
                             padding: EdgeInsets.all(16.0),
                             child: Row(
@@ -62,13 +61,12 @@ class _CommunityState extends State<Community> {
                                         .start,
                                     children: <Widget>[
                                       Text(posts[0]["title"], style: TextStyle(
-                                          fontSize: 16.0,
+                                          fontSize: 20.0,
                                           fontWeight: FontWeight.bold
                                       ),),
                                       SizedBox(height: 20.0,),
                                       Text("${posts[0]['contents']}",
                                         style: TextStyle(
-                                            fontWeight: FontWeight.bold,
                                             fontSize: 18.0
                                         ),),
                                     ],
@@ -93,7 +91,7 @@ class _CommunityState extends State<Community> {
     }
   }
 
-
+///TODO : 게시글 생성 버튼 및 게시글 생성 위젯
 Widget _buildPost(BuildContext context, int index){
   return GestureDetector(
       onTap: (){
