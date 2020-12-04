@@ -6,6 +6,15 @@ class RecipeScreen extends StatelessWidget {
   final image;///For hero tagging and showing relative image
   RecipeScreen(this.image);
 
+  var icon = Icons.star_border;
+
+  /*
+  void changeIcon(){
+    setState((){
+      icon = (icon == Icons.star_border) ? Icons.star : Icons.star_border;
+    });
+  }*/
+
   @override
   Widget build(BuildContext context) {
 
@@ -53,7 +62,12 @@ class RecipeScreen extends StatelessWidget {
                                 textAlign: TextAlign.center,
                               ),
                               Spacer(),
-                              IconButton(icon: Icon(Icons.star_border), onPressed: null),
+                              IconButton(
+                                  icon: Icon(icon),
+                                  onPressed: (){
+                                    //changeIcon();
+                                  },
+                              ),
                             ],
                           )
                         ],
@@ -68,3 +82,5 @@ class RecipeScreen extends StatelessWidget {
     );
   }
 }
+
+
