@@ -51,8 +51,8 @@ class _ProfileState extends State<Profile> {
                             Align(
                               alignment: Alignment.centerLeft,
                               child: Container(
-                                width: 150.0,
-                                height: 150.0,
+                                width: 100.0,
+                                height: 100.0,
                                 child:ClipRRect(
                                   child: Image.asset(
                                     image,
@@ -110,3 +110,25 @@ class _ProfileState extends State<Profile> {
     );
   }
 }
+
+
+/*
+* firebase storage
+* service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
+* firebase cloud
+* rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if
+          request.time < timestamp.date(2021, 1, 3);
+    }
+  }
+}
+* */

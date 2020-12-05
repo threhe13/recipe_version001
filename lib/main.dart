@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_version001/HomeScreen.dart';
 import 'package:recipe_version001/Profile.dart';
+import 'package:recipe_version001/login.dart';
+import 'mail/auth_page.dart';
 import 'package:recipe_version001/page2.dart';
-
+import 'google_signin/google_signin_demo.dart';
+import 'package:provider/provider.dart';
+import 'package:recipe_version001/mail/firebase_provider.dart';
 import 'Community.dart';
 
 void main() {
@@ -10,16 +14,49 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Recipe Recommend App',
-      theme: ThemeData(
-        primarySwatch: Colors.yellow,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<FirebaseProvider>(
+            create: (_) => FirebaseProvider())
+      ],
+      child: MaterialApp(
+        title: "Recipe Recommend App",
+        home: HomePage(),
       ),
-      debugShowCheckedModeBanner: false,
-      home: RecipeAPPMenu(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Flutter Firebase")),
+      body: ListView(
+        children: <Widget>[
+          ListTile(
+            title: Text("Google Sign-In Demo"),
+            subtitle: Text("google_sign_in Plugin"),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => GoogleSignInDemo()));
+            },
+          ),
+          ListTile(
+            title: Text("Firebase Auth"),
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => AuthPage()));
+            },
+          )
+        ].map((child) {
+          return Card(
+            child: child,
+          );
+        }).toList(),
+      ),
     );
   }
 }
