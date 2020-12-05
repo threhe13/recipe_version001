@@ -4,8 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 class RecipeScreen extends StatelessWidget {
 
   final image;///For hero tagging and showing relative image
+  //final document;
   RecipeScreen(this.image);
-
   var icon = Icons.star_border;
 
   /*
@@ -29,9 +29,9 @@ class RecipeScreen extends StatelessWidget {
             Hero(
               child: Container(
                 height: size.height*0.55,
-                child: Image.asset(image, fit:BoxFit.cover),
+                child: Image.network(image, fit:BoxFit.cover,),
               ),
-              tag: image,
+              tag: "recipe",
             ),
 
             ///Container more contents

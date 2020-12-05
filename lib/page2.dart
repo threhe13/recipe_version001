@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'RecipeScreeen.dart';
 
+/*
 class Page2 extends StatefulWidget {
   @override
   _Page2State createState() => _Page2State();
@@ -136,7 +137,7 @@ Widget _buildRecipeItem(BuildContext context, int index){
   return GestureDetector(
             onTap: (){
                 Navigator.push(context, MaterialPageRoute(
-                builder: (context) => RecipeScreen(sample)
+                builder: (context) => RecipeScreen()
                 ));
             },
       child:  Column(
@@ -209,4 +210,4 @@ Widget _buildRecipeItem(BuildContext context, int index){
         ]
       ),
   );
-}
+}*/

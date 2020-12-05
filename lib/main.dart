@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:recipe_version001/HomeScreen.dart';
 import 'package:recipe_version001/Profile.dart';
 import 'package:recipe_version001/login.dart';
+import 'package:recipe_version001/mail/signedin_page.dart';
+import 'package:recipe_version001/recipeList.dart';
 import 'mail/auth_page.dart';
 import 'package:recipe_version001/page2.dart';
 import 'google_signin/google_signin_demo.dart';
@@ -72,10 +74,10 @@ class _RecipeAPPMenu extends State<RecipeAPPMenu> {
 
   var pages = [
     HomeScreen(),
-    Page2(),
+    recipeList(),
     Community(),
     Profile(),
-    Setting(),
+    SignedInPage(),
   ];
 
   @override
